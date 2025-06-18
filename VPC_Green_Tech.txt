@@ -1,0 +1,7 @@
+What is CIDR? Classless Interdomain Range
+
+Lets say I'm goin to run a busniness and I purchaed 256 computers.  I need to name each computer a name(IP) only then I can connect to the computer.
+
+I cannot tell the machine to name the computers from 10.0.0.0 - 10.0.0.255  (0-255) => 256
+
+But we can say like 10.0.0.0/24 -> which is nothing but 256 computers. This is called CIDR
