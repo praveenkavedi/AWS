@@ -1,0 +1,10 @@
+AWS Linux important commands, 
+
+Filesystems:
+1)df -h to check the size of c drive or E drive in windows 
+2)du -sh * troubleshoot command -> lets say you found a filesystem which is just 10% size left, 
+    now you want to check which folder or file consumed more space then us  
+3) lets say there are 100 files in that folder.  now we need to sort the file in the reverse order where the file with maximum size displayed first
+    du -sh * | sort -nr
+            | sort by number(n) in reverse order(r)
+

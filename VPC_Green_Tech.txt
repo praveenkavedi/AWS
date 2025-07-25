@@ -1,3 +1,10 @@
+Tools
+Part -1 -> https://github.com/praveenkavedi/AWS.git
+Part -2 -> https://www.youtube.com/watch?v=1YnIJp054mA
+
+https://app.diagrams.net/
+
+
 What is CIDR? Classless Interdomain Range
 
 Lets say I'm goin to run a busniness and I purchaed 256 computers.  I need to name each computer a name(IP) only then I can connect to the computer.
@@ -5,3 +12,16 @@ Lets say I'm goin to run a busniness and I purchaed 256 computers.  I need to na
 I cannot tell the machine to name the computers from 10.0.0.0 - 10.0.0.255  (0-255) => 256
 
 But we can say like 10.0.0.0/24 -> which is nothing but 256 computers. This is called CIDR
+
+formula:
+    10.*.*.*/27 => 32-27 = 5 => 2^5 => 32 so 32 IP we get when we put /27
+
+Difference between 2 tier and 3 tier application:
+- 2 tier -> webserver/appserver + DB server
+- 3 Tier -> webserver + appserver + DB server
+
+Bastion host/Jump box
+NAT - Network address Transalator. 
+
+
+
