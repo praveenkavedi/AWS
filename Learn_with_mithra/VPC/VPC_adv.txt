@@ -1,0 +1,24 @@
+In this we cover, 
+- NACL
+- VPC Endpoint
+- VPC Peering
+- prefixed list -> we can create a list with different ip address(customer IP) (ASOS scenario)
+so we don't need to enter the IP address in the secuirty Group instead it is enough to attach this prefixed list name. 
+
+VPC Endpoints:  It is used to make resource communicate with each other with out internet
+ - two types -> 
+    1) Interface endpoint(uses ENI- elastic network Interface(Card)) All AWS services. and a Private IP address will be attached to the resource.
+    2) Gateway Endpoint(Doen't uses ENI, it commuicate within the region) supports S3 and DynamoDB.
+
+    If you want make EC2 to communicate with S3 without internet then we can need to use Gateway Endpoint. 
+    and both should be in the same region.
+
+    If you want make EC2 to communicate with S3 in different region we can use Interface Endpoint. 
+
+
+VPC Peering: 
+- To connect two VPC without internet. 
+- CIDR range should not overlap, because it they have same CIDR range as 10.0.0.0/16 they are chance the EC@ instance in the VPC have same IP address. 
+- Disadvantage is it can only two vpc with one peering.  
+
+Transit Gateway:  This overcomes the Disadvantage we saw in VPC peering. 

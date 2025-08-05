@@ -1,0 +1,30 @@
+SNS -> create Topics -> Add subscribers.
+
+- In Cloud watch we have built in metrics. but memory and volumne metrics is not comes in default. Then how you will be able to monitor that?
+Hence we need to install cloudwatch agent into the ec2 machine. 
+
+Steps to create custom metrics:
+1) create log groups.
+2)creating the cloudwatch agent configuration file with wizard and mention the logs groups. 
+When we install the cloudwatch agent, during the time of installation we will get a wizard it which ask question to write custom metrics to monitor memory, volume for you. if we say yes. it will generate the script in a config file and we can use that. 
+and by default the config file is stroed in this location then stored in /opt/aws/amazon-cloudwatch-agent/bin/config.json but we need to store it different location to start cloudwatch agent orelse it will throw error. 
+
+2) then start the Cloudwatch agent in the instance. 
+        sudo systemctl start cloudwatch agent
+        sudo systemctl enable cloudwatch agent. 
+
+difference between cloudwatch and cloudtrail
+    - Cloudwatch is the monitoring tool, it is used to monitor the logs, CPU, memory, volume, etc. 
+    - Cloudtrail it will generate the logs itself. it create the logs for each events in the AWS.  like when I click some console in AWS it will generate the logs. 
+        by default AWS is keeping last 90 days of event logs 
+
+        lets say some one delete some resources and we can monitor who has deleted the resources, it will capture the IAM user name or the IP address of the machine from which it is deleted.
+
+        The Flow will be like,  
+               Create Cloudwatch agent create metrics and attach the log groups.
+                                |
+               Create Alarms for those metrics. 
+                                |
+               The Alarm will push the message to SNS topics. 
+                                |
+               SNS Topics will send notification to the subscribers in the topics. 
